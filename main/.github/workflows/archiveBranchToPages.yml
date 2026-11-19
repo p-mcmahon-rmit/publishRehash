@@ -1,0 +1,72 @@
+name: Archive Branch to Pages
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: workflow_dispatch
+# on: [push]
+jobs:
+  Archive-Branch-ToPages:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    env:
+      # have any changes been made to the repo
+      CHANGES_MADE: false
+    steps:
+    # checkout repo into runner
+    - uses: actions/checkout@v6
+      with:
+        token: ${{secrets.GIT_TOKEN}}
+        # fetch all commits rather than just last one
+        fetch-depth: 0
+    # fetch pages branch
+    - run: git fetch origin gh-pages
+    # switch to branch
+    - run: git switch gh-pages
+    # check to see if branch directory already exists and create if not
+    - run: |
+            if [ ! -d ${{github.ref_name}} ]; then
+              mkdir "${{github.ref_name}}"
+            fi;
+    # check to see if json refernce object exists
+    - run: |
+            if [ ! -f published-branches.json ]; then
+              jq -n '{"branches":[]}' > published-branches.json
+              echo "created new branches file"
+            fi;
+    # check to see if branch already referenced in json object
+    - run: |
+              if [ "$(jq '.branches | index("${{ github.ref_name }}")' published-branches.json)" == "null" ]; then
+                jq '.branches += ["${{ github.ref_name }}"]' published-branches.json > temp.json && mv temp.json published-branches.json
+              fi;
+    # archive files from original branch, bring them across the extract to appropriate folder
+    - run: git archive --format tar ${{ github.ref_name }} -v | tar x -vf - --directory ${{ github.ref_name }}/
+    # output git log as json
+    - run: |
+              git log --pretty=format:'{%n  "commit": "%H",%n  "subject": "%s",%n  "body": "%-b%-C()",%n  "name": "%aN",%n  "date": "%aD",' --shortstat -m "${{ github.ref_name }}" -- | sed "/)$/s/^ *//g" | sed "/)$/s/^/  \"diffs\": \"/" | sed "/)$/s/$/\"\n},/" | sed "$ s/,$//" | sed ':a;N;$!ba;s/\r\n\([^{]\)/\\n\1/g'| awk 'BEGIN { print("[") } { print($0) } END { print("]") }' > ${{ github.ref_name }}/commit-history.json      
+    # stage any files to commit later
+    - run: git add .
+    # check if changes have been made before commiting
+    - run: |
+            if [[ -n $(git diff --cached --exit-code) ]]; then
+              echo "Changes detected."
+              echo "CHANGES_MADE=true" >> "$GITHUB_ENV"
+            else
+              echo "No changes."
+            fi
+    # add and commit files to the repo : from https://build5nines.com/github-actions-commit-and-push-changes-back-to-repository/
+    # Commit and Push Changes
+    - name: Commit and Push Changes
+      if: env.CHANGES_MADE == 'true' 
+      run: |
+        # configure user
+        git config --global user.name "${{ github.actor }}"
+        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+        # remove the workflows folder : needs to be forced
+        # git rm ${{ github.ref_name }}/.github/ -r -f
+    
+        # make commit with staged changes
+        git commit -m 'files changed'
+    
+        # push the commit back up to source GitHub repository
+        git push
+    - run: echo "🍏 This job's status is ${{ job.status }}."
