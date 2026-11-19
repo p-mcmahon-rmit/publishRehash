@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # have any changes been made to the repo
-      CHANGES_MADE: true
+      CHANGES_MADE: false
     steps:
     # checkout repo into runner
     - uses: actions/checkout@v6
@@ -31,6 +31,16 @@ jobs:
               echo "created new branches file"
             fi;
     # check to see if branch already referenced in json object
+
+    - run: git diff --exit-code
+    # check if changes have been made before commiting
+    - run: |
+            if [[ -n "$(git diff --exit-code)" ]]; then
+              echo "Changes detected."
+              echo "{CHANGES_MADE}={true}" >> "GITHUB_ENV"
+            else
+              echo "No changes."
+            fi
     # add and commit files to the repo : from https://build5nines.com/github-actions-commit-and-push-changes-back-to-repository/
     # Commit and Push Changes
     - name: Commit and Push Changes
