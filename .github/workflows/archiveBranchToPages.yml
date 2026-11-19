@@ -1,0 +1,11 @@
+name: Archive Branch to Pages
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: workflow_dispatch
+# on: [push]
+jobs:
+  Archive-Branch-ToPages:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "🍏 This job's status is ${{ job.status }}."
