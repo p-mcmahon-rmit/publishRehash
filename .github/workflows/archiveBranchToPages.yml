@@ -40,7 +40,7 @@ jobs:
     - run: |
             if [[ -n $(git diff --cached --exit-code) ]]; then
               echo "Changes detected."
-              echo "{CHANGES_MADE}={true}" >> "$GITHUB_ENV"
+              echo "CHANGES_MADE=true" >> "$GITHUB_ENV"
             else
               echo "No changes."
             fi
