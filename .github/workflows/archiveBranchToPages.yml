@@ -34,9 +34,10 @@ jobs:
     # check to see if branch already referenced in json object
 
     - run: |
-              git log "${{ github.ref_name }}" -- --pretty=format:'{%n  "commit": "%H",%n  "subject": "%s",%n  "body": "%-b%-C()",%n  "name": "%aN",%n  "date": "%aD",' --shortstat -m | sed "/)$/s/^ *//g" | sed "/)$/s/^/  \"diffs\": \"/" | sed "/)$/s/$/\"\n},/" | sed "$ s/,$//" | sed ':a;N;$!ba;s/\r\n\([^{]\)/\\n\1/g'| awk 'BEGIN { print("[") } { print($0) } END { print("]") }' > commit_history.json
+              git log "${{ github.ref_name }}" -- --pretty=format:'{%n  "commit": "%H",%n  "subject": "%s",%n  "body": "%-b%-C()",%n  "name": "%aN",%n  "date": "%aD",' --shortstat -m | sed "/)$/s/^ *//g" | sed "/)$/s/^/  \"diffs\": \"/" | sed "/)$/s/$/\"\n},/" | sed "$ s/,$//" | sed ':a;N;$!ba;s/\r\n\([^{]\)/\\n\1/g'| awk 'BEGIN { print("[") } { print($0) } END { print("]") }' > commit-history.json
     - run: ls
-    - run: git diff HEAD --exit-code
+    - run: git add .
+    - run: git diff --cached
     # check if changes have been made before commiting
     - run: |
             if [[ -n "$(git diff --exit-code)" ]]; then
