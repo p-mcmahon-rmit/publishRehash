@@ -8,4 +8,8 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
+    # checkout repo into runner
+    - uses: actions/checkout@v6
+      with:
+        token: ${{secrets.GIT_TOKEN}}
     - run: echo "🍏 This job's status is ${{ job.status }}."
