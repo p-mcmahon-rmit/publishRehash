@@ -24,7 +24,8 @@ jobs:
     # check to see if json refernce object exists
     - run: |
             if [ ! -f published-branches.json ]; then
-              echo "not here"
+              jq -n '{"branches":[]}' > published-branches.json
+              echo "created new branches file"
             fi;
     # check to see if branch already referenced in json object
     - run: ls
