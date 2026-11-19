@@ -21,5 +21,11 @@ jobs:
             if [ ! -d ${{github.ref_name}} ]; then
               mkdir "${{github.ref_name}}"
             fi;
+    # check to see if json refernce object exists
+    - run: |
+            if [ ! -f published-branches.json ]; then
+              echo "not here"
+            fi;
+    # check to see if branch already referenced in json object
     - run: ls
     - run: echo "🍏 This job's status is ${{ job.status }}."
