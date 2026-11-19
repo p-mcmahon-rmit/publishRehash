@@ -19,7 +19,6 @@ jobs:
     - run: git fetch origin gh-pages
     # switch to branch
     - run: git switch gh-pages
-    - run: ls
     # check to see if branch directory already exists and create if not
     - run: |
             if [ ! -d ${{github.ref_name}} ]; then
@@ -35,12 +34,11 @@ jobs:
 
     - run: |
               git log "${{ github.ref_name }}" -- --pretty=format:'{%n  "commit": "%H",%n  "subject": "%s",%n  "body": "%-b%-C()",%n  "name": "%aN",%n  "date": "%aD",' --shortstat -m | sed "/)$/s/^ *//g" | sed "/)$/s/^/  \"diffs\": \"/" | sed "/)$/s/$/\"\n},/" | sed "$ s/,$//" | sed ':a;N;$!ba;s/\r\n\([^{]\)/\\n\1/g'| awk 'BEGIN { print("[") } { print($0) } END { print("]") }' > commit-history.json
-    - run: ls
+    # stage any files to commit later
     - run: git add .
-    - run: git diff --cached --exit-code
     # check if changes have been made before commiting
     - run: |
-            if [[ -n "$(git diff --exit-code)" ]]; then
+            if [[ -n "$(git diff --cached --exit-code)" ]]; then
               echo "Changes detected."
               echo "{CHANGES_MADE}={true}" >> "GITHUB_ENV"
             else
@@ -54,9 +52,6 @@ jobs:
         # configure user
         git config --global user.name "${{ github.actor }}"
         git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-    
-        # stage any file changes to be committed
-        git add .
 
         # remove the workflows folder : needs to be forced
         # git rm ${{ github.ref_name }}/.github/ -r -f
