@@ -13,8 +13,13 @@ jobs:
       with:
         token: ${{secrets.GIT_TOKEN}}
     # fetch pages branch
-    - run: run git fetch origin gh-pages
+    - run: git fetch origin gh-pages
     # switch to branch
     - run: git switch gh-pages
+    # check to see if branch directory already exists and create if not
+    - run: |
+            if [ ! -d ${{github.ref_name}} ]; then
+              mkdir "${{github.ref_name}}"
+            fi;
     - run: ls
     - run: echo "🍏 This job's status is ${{ job.status }}."
