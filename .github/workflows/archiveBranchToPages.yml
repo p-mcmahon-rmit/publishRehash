@@ -38,7 +38,7 @@ jobs:
     - run: git add .
     # check if changes have been made before commiting
     - run: |
-            if [[ -n "$(git diff --cached --exit-code)" ]]; then
+            if [[ -n $(git diff --cached --exit-code) ]]; then
               echo "Changes detected."
               echo "{CHANGES_MADE}={true}" >> "GITHUB_ENV"
             else
