@@ -19,6 +19,7 @@ jobs:
     - run: git fetch origin gh-pages
     # switch to branch
     - run: git switch gh-pages
+    - run: ls
     # check to see if branch directory already exists and create if not
     - run: |
             if [ ! -d ${{github.ref_name}} ]; then
