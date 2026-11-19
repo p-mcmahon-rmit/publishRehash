@@ -7,6 +7,9 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
+    env:
+      # have any changes been made to the repo
+      CHANGES_MADE: true
     steps:
     # checkout repo into runner
     - uses: actions/checkout@v6
@@ -28,5 +31,24 @@ jobs:
               echo "created new branches file"
             fi;
     # check to see if branch already referenced in json object
-    - run: ls
+    # add and commit files to the repo : from https://build5nines.com/github-actions-commit-and-push-changes-back-to-repository/
+    # Commit and Push Changes
+    - name: Commit and Push Changes
+      if: ${{ env.CHANGES_MADE == 'true' }}      
+      run: |
+        # configure user
+        git config --global user.name "${{ github.actor }}"
+        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+    
+        # stage any file changes to be committed
+        git add .
+
+        # remove the workflows folder : needs to be forced
+        git rm ${{ github.ref_name }}/.github/ -r -f
+    
+        # make commit with staged changes
+        git commit -m 'files changed'
+    
+        # push the commit back up to source GitHub repository
+        git push
     - run: echo "🍏 This job's status is ${{ job.status }}."
