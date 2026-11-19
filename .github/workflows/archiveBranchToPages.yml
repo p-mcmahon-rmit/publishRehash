@@ -32,11 +32,11 @@ jobs:
             fi;
     # check to see if branch already referenced in json object
 
-    - run: git log "${{ github.ref_name }}" --
+    - run: git log "${{ github.ref_name }}" -- > commit-history.json
     #- run: |
     #          git log "${{ github.ref_name }}" -- --pretty=format:'{%n  "commit": "%H",%n  "subject": "%s",%n  "body": "%-b%-C()",%n  "name": "%aN",%n  "date": "%aD",' --shortstat -m | sed "/)$/s/^ *//g" | sed "/)$/s/^/  \"diffs\": \"/" | sed "/)$/s/$/\"\n},/" | sed "$ s/,$//" | sed ':a;N;$!ba;s/\r\n\([^{]\)/\\n\1/g'| awk 'BEGIN { print("[") } { print($0) } END { print("]") }' > commit-history.json
     
-    #- run: jq '.' commit-history.json              
+    - run: jq '.' commit-history.json              
     # stage any files to commit later
     - run: git add .
     # check if changes have been made before commiting
