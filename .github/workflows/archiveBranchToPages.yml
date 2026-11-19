@@ -40,11 +40,10 @@ jobs:
     - run: |
             if [[ -n $(git diff --cached --exit-code) ]]; then
               echo "Changes detected."
-              echo "{CHANGES_MADE}={true}" >> "GITHUB_ENV"
+              echo "{CHANGES_MADE}={true}" >> "$GITHUB_ENV"
             else
               echo "No changes."
             fi
-
     - run: echo ${{ env.CHANGES_MADE }}
     # add and commit files to the repo : from https://build5nines.com/github-actions-commit-and-push-changes-back-to-repository/
     # Commit and Push Changes
