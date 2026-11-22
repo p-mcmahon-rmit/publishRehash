@@ -1,5 +1,14 @@
 [
 {
+  "commit": "02632d871106ca471b70cc2e4efbb6255f23ff3a",
+  "subject": "Remove .gitignore from archive branch workflow",
+  "body": "Remove .gitignore file from the archive branch.",
+  "name": "Patrick McMahon",
+  "date": "Mon, 23 Nov 2026 09:14:44 +1100",
+  "diffs": "1 file changed, 2 insertions(+)"
+},
+
+{
   "commit": "72ed3d727c331596ee40b5eeab6f5d47cb26dd41",
   "subject": "Update archiveBranchToPages.yml",
   "body": "",

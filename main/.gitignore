@@ -1,5 +1,0 @@
-# this file contains a list of files and directories we don't want to include in our online repository
-# as the /.idea folder holds the settings for WebStorm we don't want that to be included
-# other common uses are to ignore large folders containing large media files
-
-/.idea
