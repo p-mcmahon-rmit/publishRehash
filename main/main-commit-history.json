@@ -1,5 +1,14 @@
 [
 {
+  "commit": "72ed3d727c331596ee40b5eeab6f5d47cb26dd41",
+  "subject": "Update archiveBranchToPages.yml",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "Mon, 23 Nov 2026 09:13:24 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
   "commit": "2ed3f7e222df4f26380c92fb0f3a524f28fa456b",
   "subject": "changed folder check",
   "body": "Modify the workflow to remove existing branch directory before archiving files. also added creation of folder by default to account for this",
