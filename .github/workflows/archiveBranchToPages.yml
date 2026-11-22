@@ -65,6 +65,8 @@ jobs:
 
         # remove the workflows folder : needs to be forced
         git rm ${{ github.ref_name }}/.github/ -r -f
+        # remove git ignore file
+        git rm ${{ github.ref_name }}/.gitignore -f
     
         # make commit with staged changes
         git commit -m 'files changed'
