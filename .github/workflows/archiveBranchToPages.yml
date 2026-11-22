@@ -21,11 +21,13 @@ jobs:
     - run: git fetch origin gh-pages
     # switch to branch
     - run: git switch gh-pages
-    # check to see if branch directory already exists and create if not
+    # check to see if branch directory already exists and remove if it does (otherwise archive is only additive
     - run: |
-            if [ ! -d ${{github.ref_name}} ]; then
-              mkdir "${{github.ref_name}}"
+            if [ -d ${{github.ref_name}} ]; then
+              rm -r ${{ github.ref_name }}
             fi;
+    # then re/create directory
+    - run: mkdir "${{github.ref_name}}"
     # check to see if json refernce object exists
     - run: |
             if [ ! -f published-branches.json ]; then
@@ -37,8 +39,6 @@ jobs:
               if [ "$(jq '.branches | index("${{ github.ref_name }}")' published-branches.json)" == "null" ]; then
                 jq '.branches += ["${{ github.ref_name }}"]' published-branches.json > temp.json && mv temp.json published-branches.json
               fi;
-    # remove existing files from branch before archiving : otherwise will only add to folder
-    - run: rm -r ${{ github.ref_name }}
     # archive files from original branch, bring them across the extract to appropriate folder
     - run: git archive --format tar ${{ github.ref_name }} -v | tar x -vf - --directory ${{ github.ref_name }}/
     # output git log as json
