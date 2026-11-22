@@ -21,11 +21,13 @@ jobs:
     - run: git fetch origin gh-pages
     # switch to branch
     - run: git switch gh-pages
-    # check to see if branch directory already exists and create if not
+    # check to see if branch directory already exists and remove if it does (otherwise archive is only additive
     - run: |
-            if [ ! -d ${{github.ref_name}} ]; then
-              mkdir "${{github.ref_name}}"
+            if [ -d ${{github.ref_name}} ]; then
+              rm -r ${{ github.ref_name }}
             fi;
+    # then re/create directory
+    - run: mkdir "${{github.ref_name}}"
     # check to see if json refernce object exists
     - run: |
             if [ ! -f published-branches.json ]; then
