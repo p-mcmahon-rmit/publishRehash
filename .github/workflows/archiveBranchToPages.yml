@@ -37,6 +37,8 @@ jobs:
               if [ "$(jq '.branches | index("${{ github.ref_name }}")' published-branches.json)" == "null" ]; then
                 jq '.branches += ["${{ github.ref_name }}"]' published-branches.json > temp.json && mv temp.json published-branches.json
               fi;
+    # remove existing files from branch before archiving : otherwise will only add to folder
+    - run: rm -r ${{ github.ref_name }}
     # archive files from original branch, bring them across the extract to appropriate folder
     - run: git archive --format tar ${{ github.ref_name }} -v | tar x -vf - --directory ${{ github.ref_name }}/
     # output git log as json
