@@ -1,8 +1,10 @@
 #timeline-wrapper {
     display: flex;
     gap: 1rem;
+    background: linear-gradient(white 48%, black 48%, black 52%, white 52%);
 }
 
-summary {
-    cursor: pointer;
+.dateWrapper {
+    display: flex;
+    flex-direction: column;
 }
