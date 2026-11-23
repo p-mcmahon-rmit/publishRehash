@@ -2,3 +2,5 @@
 # as the /.idea folder holds the settings for WebStorm we don't want that to be included
 
 /.idea
+
+main-commit-history-page.html

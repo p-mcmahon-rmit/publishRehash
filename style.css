@@ -1,0 +1,8 @@
+#timeline-wrapper {
+    display: flex;
+    gap: 1rem;
+}
+
+summary {
+    cursor: pointer;
+}
