@@ -1,341 +1,141 @@
 [
 {
-  "commit": "6b3e2b2feddbdbbb3ab3039256ea61ed8cda9b1f",
-  "subject": "Update archiveBranchToPages.yml",
+  "commit": "dbe9b3ad79016fae3aae9570de806adfa666aca3",
+  "subject": "add index.html file",
   "body": "",
   "name": "Patrick McMahon",
-  "date": "2026-11-23",
-  "dateTime": "Mon, 23 Nov 2026 12:50:34 +1100",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 14:02:15 +1100",
+  "diffs": "2 files changed, 23 insertions(+)"
+},
+
+{
+  "commit": "b62b4988453cd72398e50da4e68997357db6dbec",
+  "subject": "Add GitHub Actions workflow to archive branch",
+  "body": "in test mode, just to trigger manually",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 14:10:24 +1100",
+  "diffs": "1 file changed, 11 insertions(+)"
+},
+
+{
+  "commit": "5cdd9d90383600b298125b455759c35b04abf05c",
+  "subject": "Add checkout step in archiveBranchToPages.yml",
+  "body": "Added checkout step to archive branch workflow.",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 14:15:23 +1100",
+  "diffs": "1 file changed, 4 insertions(+)"
+},
+
+{
+  "commit": "a2575902dd10e5dd9be08b47d77d763db3fee9dc",
+  "subject": "Fetch and switch to gh-pages branch in workflow",
+  "body": "Added steps to fetch and switch to the gh-pages branch.",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 14:18:30 +1100",
+  "diffs": "1 file changed, 5 insertions(+)"
+},
+
+{
+  "commit": "bfcfb2884dd11c21cc899031f0c6c8ac28340540",
+  "subject": "Fix git fetch command and add directory creation check",
+  "body": "Fixed syntax for git fetch command and added directory check.",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 14:22:55 +1100",
+  "diffs": "1 file changed, 6 insertions(+), 1 deletion(-)"
+},
+
+{
+  "commit": "705cc6be466b0e6f60b69ecac61832a925a530b0",
+  "subject": "Enhance archiveBranchToPages workflow with checks",
+  "body": "Add checks for JSON reference and existing directory in workflow",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 14:28:11 +1100",
+  "diffs": "1 file changed, 6 insertions(+)"
+},
+
+{
+  "commit": "46e1895087df1a53f1790076e3d6beb1df43ac35",
+  "subject": "Add logic to create published-branches.json if missing",
+  "body": "Create a new branches file if it doesn't exist.",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 14:34:21 +1100",
+  "diffs": "1 file changed, 2 insertions(+), 1 deletion(-)"
+},
+
+{
+  "commit": "7eca34a673381ed2004d8d9c2000cdfffe6851dc",
+  "subject": "Add CHANGES_MADE env variable to workflow",
+  "body": "Added environment variable CHANGES_MADE to track changes. also added commit and push. currently changes_made is always true",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 14:38:27 +1100",
+  "diffs": "1 file changed, 23 insertions(+), 1 deletion(-)"
+},
+
+{
+  "commit": "94d7a6db7238d4da4a0fb15d45ae459baea786be",
+  "subject": "Comment out git rm command for workflows folder",
+  "body": "Comment out the command to remove the workflows folder.",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 14:40:45 +1100",
   "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
 },
 
 {
-  "commit": "7322f26b6130c50e3993ebb6fa76112603e6913d",
-  "subject": "Modify git log format in workflow for JSON output",
-  "body": "Updated git log command to include short date format in JSON output.",
+  "commit": "932c456668bcc2664da6ffdac29eb79354e7221a",
+  "subject": "Update CHANGES_MADE and add change detection",
+  "body": "Changed CHANGES_MADE environment variable to false and added a check for changes before committing.",
   "name": "Patrick McMahon",
-  "date": "2026-11-23",
-  "dateTime": "Mon, 23 Nov 2026 12:48:30 +1100",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 14:43:33 +1100",
+  "diffs": "1 file changed, 11 insertions(+), 1 deletion(-)"
+},
+
+{
+  "commit": "cd4823d88511e7896441c9442ef226c6db080c4c",
+  "subject": "Add git log command to archive branch workflow",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 14:45:42 +1100",
+  "diffs": "1 file changed, 3 insertions(+)"
+},
+
+{
+  "commit": "de6d0b0621322010ced0e8864c0cae819f7df9b3",
+  "subject": "Add ls command to workflow before git diff check",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 14:46:48 +1100",
   "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
 },
 
 {
-  "commit": "a8b655419254049632c25941ca2467af99d95d89",
-  "subject": "added short date",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-23",
-  "dateTime": "Mon, 23 Nov 2026 10:21:04 +1100",
-  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
-},
-
-{
-  "commit": "02632d871106ca471b70cc2e4efbb6255f23ff3a",
-  "subject": "Remove .gitignore from archive branch workflow",
-  "body": "Remove .gitignore file from the archive branch.",
-  "name": "Patrick McMahon",
-  "date": "2026-11-23",
-  "dateTime": "Mon, 23 Nov 2026 09:14:44 +1100",
-  "diffs": "1 file changed, 2 insertions(+)"
-},
-
-{
-  "commit": "72ed3d727c331596ee40b5eeab6f5d47cb26dd41",
-  "subject": "Update archiveBranchToPages.yml",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-23",
-  "dateTime": "Mon, 23 Nov 2026 09:13:24 +1100",
-  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
-},
-
-{
-  "commit": "2ed3f7e222df4f26380c92fb0f3a524f28fa456b",
-  "subject": "changed folder check",
-  "body": "Modify the workflow to remove existing branch directory before archiving files. also added creation of folder by default to account for this",
-  "name": "Patrick McMahon",
-  "date": "2026-11-23",
-  "dateTime": "Mon, 23 Nov 2026 08:58:07 +1100",
-  "diffs": "1 file changed, 5 insertions(+), 5 deletions(-)"
-},
-
-{
-  "commit": "9733c6e3ed4d0b0109eba7225accecf2346d84d8",
-  "subject": "Remove existing files before archiving branch",
-  "body": "Add step to remove existing files from branch before archiving.",
-  "name": "Patrick McMahon",
-  "date": "2026-11-23",
-  "dateTime": "Mon, 23 Nov 2026 08:51:57 +1100",
-  "diffs": "1 file changed, 2 insertions(+)"
-},
-
-{
-  "commit": "e907ae9ac606f9a38cc67993ee3d7428a9fdad55",
-  "subject": "append name of commit logs onto file",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-23",
-  "dateTime": "Mon, 23 Nov 2026 08:43:59 +1100",
-  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
-},
-
-{
-  "commit": "536806137ebafcc36a9fcc087482863fe2beacda",
-  "subject": "Delete .idea directory from remote",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-23",
-  "dateTime": "Mon, 23 Nov 2026 08:41:43 +1100",
-  "diffs": "4 files changed, 32 deletions(-)"
-},
-
-{
-  "commit": "77c9b02b2dbe583462b3a7b33b29bddf34431e78",
-  "subject": "Delete style.css",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-23",
-  "dateTime": "Mon, 23 Nov 2026 08:41:13 +1100",
-  "diffs": "1 file changed, 1 deletion(-)"
-},
-
-{
-  "commit": "65d28880163bb5bd678d9ee8277949ed07b7c343",
-  "subject": "clean up main",
-  "body": "got rid of index and added gitignore",
-  "name": "Patrick McMahon",
-  "date": "2026-11-23",
-  "dateTime": "Mon, 23 Nov 2026 08:35:52 +1100",
-  "diffs": "5 files changed, 27 insertions(+), 13 deletions(-)"
-},
-
-{
-  "commit": "4d6c71733f86cc402828f6a50980afb07b62d1f4",
-  "subject": "Refactor GitHub Actions workflow for branch archiving",
+  "commit": "697f1955e8ba3d1cb657631e9578e55074237227",
+  "subject": "Create style.css",
   "body": "",
   "name": "Patrick McMahon",
   "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 16:04:57 +1100",
-  "diffs": "1 file changed, 8 insertions(+), 6 deletions(-)"
+  "dateTime": "Thu, 19 Nov 2026 14:49:12 +1100",
+  "diffs": "1 file changed, 1 insertion(+)"
 },
 
 {
-  "commit": "e17e93fed89dae8be663c671a01d3250ab5a17f7",
-  "subject": "Update archiveBranchToPages.yml",
-  "body": "",
+  "commit": "0899d9cae5fb3ab7ff22ee3e48550aebbea8d0d7",
+  "subject": "Stage changes before diff check in workflow",
+  "body": "Added a step to stage changes before checking for differences in the GitHub Actions workflow.",
   "name": "Patrick McMahon",
   "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 16:00:50 +1100",
-  "diffs": "1 file changed, 2 insertions(+)"
-},
-
-{
-  "commit": "fdd338f399baa58f3e074aabdba5d6b69b3f6ef9",
-  "subject": "Update archiveBranchToPages.yml",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:55:34 +1100",
-  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
-},
-
-{
-  "commit": "f4a51e0bbdf9441ac13e80f4451010e1a0db6423",
-  "subject": "Fix formatting in git log command in workflow",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:41:46 +1100",
-  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
-},
-
-{
-  "commit": "fc3ae68bed273f440f73643ab6465ecb0a59a687",
-  "subject": "Update git log command in workflow file",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:39:02 +1100",
-  "diffs": "1 file changed, 1 insertion(+), 2 deletions(-)"
-},
-
-{
-  "commit": "d84698cbf77c278bd1b7b6fe2632499833fb71b1",
-  "subject": "Update archiveBranchToPages.yml",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:37:14 +1100",
-  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
-},
-
-{
-  "commit": "1a1f6a79eed1d3395f0ef789de01a0bb2febec41",
-  "subject": "Modify git log format in workflow for commit history",
-  "body": "Updated git log command to include author and message details in JSON format.",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:35:56 +1100",
-  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
-},
-
-{
-  "commit": "51363c32eb97060e9d839e3c53373b37bcf6eb68",
-  "subject": "Update git log command in workflow YAML file",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:33:22 +1100",
-  "diffs": "1 file changed, 3 insertions(+), 2 deletions(-)"
-},
-
-{
-  "commit": "91a8940fb2b7ebbe1d46ee94766e69da313b2644",
-  "subject": "Fix command to log branch history to JSON file",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:31:31 +1100",
-  "diffs": "1 file changed, 2 insertions(+), 2 deletions(-)"
-},
-
-{
-  "commit": "1d8c9c1be42195c063f7e66c020893514ae6b457",
-  "subject": "Update archiveBranchToPages.yml",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:29:31 +1100",
-  "diffs": "1 file changed, 5 insertions(+), 4 deletions(-)"
-},
-
-{
-  "commit": "a59b993227b90c0249a244c9c2cd3fc28ba5f759",
-  "subject": "Update archiveBranchToPages.yml",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:27:48 +1100",
-  "diffs": "1 file changed, 2 insertions(+)"
-},
-
-{
-  "commit": "df46ed764689a33b6a1e776615378bf7c06857e9",
-  "subject": "Update archiveBranchToPages.yml",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:23:37 +1100",
-  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
-},
-
-{
-  "commit": "769ccf81b6f341c7c1113f4033eab42e25e3e11b",
-  "subject": "Fix git diff check and update add command",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:16:58 +1100",
-  "diffs": "1 file changed, 3 insertions(+), 3 deletions(-)"
-},
-
-{
-  "commit": "aa578e1a393be5387ba7c4d4fa3451e95702a304",
-  "subject": "Fix git diff check and comment out git add",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:13:15 +1100",
-  "diffs": "1 file changed, 2 insertions(+), 2 deletions(-)"
-},
-
-{
-  "commit": "963384012120073b185f75e770c9169c6419b99b",
-  "subject": "Fix environment variable assignment for changes detection",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:11:43 +1100",
-  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
-},
-
-{
-  "commit": "ab545f1c43a0871442db80981294764b87af9945",
-  "subject": "Fix environment variable assignment in workflow",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:08:56 +1100",
-  "diffs": "1 file changed, 1 insertion(+), 2 deletions(-)"
-},
-
-{
-  "commit": "107ef1a9d8e9c5b5aa62688ab179238a26d64947",
-  "subject": "Add echo command for changes made in workflow",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:05:41 +1100",
-  "diffs": "1 file changed, 2 insertions(+)"
-},
-
-{
-  "commit": "780f213c3ede257005498600b7f4c27c40a2d4cc",
-  "subject": "Update archiveBranchToPages.yml",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:04:07 +1100",
-  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
-},
-
-{
-  "commit": "e500fa0ab6e264dc1b4f8ae251d86edde1e008dc",
-  "subject": "Simplify condition for checking staged changes",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:02:31 +1100",
-  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
-},
-
-{
-  "commit": "08f9076dcfc7ffce57457cd1acc765e92bb95ba7",
-  "subject": "Refactor archiveBranchToPages workflow",
-  "body": "Updated the workflow to check for staged changes and removed unnecessary commands.",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 15:01:13 +1100",
-  "diffs": "1 file changed, 2 insertions(+), 7 deletions(-)"
-},
-
-{
-  "commit": "4c424897f8551d1722890830961f1b8b5fbf4074",
-  "subject": "Update archiveBranchToPages.yml",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:59:38 +1100",
-  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
-},
-
-{
-  "commit": "9605a622607395159dd1e2ebefba355f04b87c9b",
-  "subject": "Update archiveBranchToPages.yml",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:58:40 +1100",
-  "diffs": "1 file changed, 3 insertions(+), 2 deletions(-)"
-},
-
-{
-  "commit": "f10e5a52b106d51fe324f56a0498f6c437a80b3a",
-  "subject": "Add ls command to check directory contents",
-  "body": "",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:54:58 +1100",
+  "dateTime": "Thu, 19 Nov 2026 14:51:05 +1100",
   "diffs": "1 file changed, 1 insertion(+)"
 },
 
@@ -350,142 +150,352 @@
 },
 
 {
-  "commit": "0899d9cae5fb3ab7ff22ee3e48550aebbea8d0d7",
-  "subject": "Stage changes before diff check in workflow",
-  "body": "Added a step to stage changes before checking for differences in the GitHub Actions workflow.",
+  "commit": "f10e5a52b106d51fe324f56a0498f6c437a80b3a",
+  "subject": "Add ls command to check directory contents",
+  "body": "",
   "name": "Patrick McMahon",
   "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:51:05 +1100",
+  "dateTime": "Thu, 19 Nov 2026 14:54:58 +1100",
   "diffs": "1 file changed, 1 insertion(+)"
 },
 
 {
-  "commit": "697f1955e8ba3d1cb657631e9578e55074237227",
-  "subject": "Create style.css",
+  "commit": "9605a622607395159dd1e2ebefba355f04b87c9b",
+  "subject": "Update archiveBranchToPages.yml",
   "body": "",
   "name": "Patrick McMahon",
   "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:49:12 +1100",
-  "diffs": "1 file changed, 1 insertion(+)"
+  "dateTime": "Thu, 19 Nov 2026 14:58:40 +1100",
+  "diffs": "1 file changed, 3 insertions(+), 2 deletions(-)"
 },
 
 {
-  "commit": "de6d0b0621322010ced0e8864c0cae819f7df9b3",
-  "subject": "Add ls command to workflow before git diff check",
+  "commit": "4c424897f8551d1722890830961f1b8b5fbf4074",
+  "subject": "Update archiveBranchToPages.yml",
   "body": "",
   "name": "Patrick McMahon",
   "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:46:48 +1100",
+  "dateTime": "Thu, 19 Nov 2026 14:59:38 +1100",
   "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
 },
 
 {
-  "commit": "cd4823d88511e7896441c9442ef226c6db080c4c",
-  "subject": "Add git log command to archive branch workflow",
+  "commit": "08f9076dcfc7ffce57457cd1acc765e92bb95ba7",
+  "subject": "Refactor archiveBranchToPages workflow",
+  "body": "Updated the workflow to check for staged changes and removed unnecessary commands.",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 15:01:13 +1100",
+  "diffs": "1 file changed, 2 insertions(+), 7 deletions(-)"
+},
+
+{
+  "commit": "e500fa0ab6e264dc1b4f8ae251d86edde1e008dc",
+  "subject": "Simplify condition for checking staged changes",
   "body": "",
   "name": "Patrick McMahon",
   "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:45:42 +1100",
-  "diffs": "1 file changed, 3 insertions(+)"
-},
-
-{
-  "commit": "932c456668bcc2664da6ffdac29eb79354e7221a",
-  "subject": "Update CHANGES_MADE and add change detection",
-  "body": "Changed CHANGES_MADE environment variable to false and added a check for changes before committing.",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:43:33 +1100",
-  "diffs": "1 file changed, 11 insertions(+), 1 deletion(-)"
-},
-
-{
-  "commit": "94d7a6db7238d4da4a0fb15d45ae459baea786be",
-  "subject": "Comment out git rm command for workflows folder",
-  "body": "Comment out the command to remove the workflows folder.",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:40:45 +1100",
+  "dateTime": "Thu, 19 Nov 2026 15:02:31 +1100",
   "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
 },
 
 {
-  "commit": "7eca34a673381ed2004d8d9c2000cdfffe6851dc",
-  "subject": "Add CHANGES_MADE env variable to workflow",
-  "body": "Added environment variable CHANGES_MADE to track changes. also added commit and push. currently changes_made is always true",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:38:27 +1100",
-  "diffs": "1 file changed, 23 insertions(+), 1 deletion(-)"
-},
-
-{
-  "commit": "46e1895087df1a53f1790076e3d6beb1df43ac35",
-  "subject": "Add logic to create published-branches.json if missing",
-  "body": "Create a new branches file if it doesn't exist.",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:34:21 +1100",
-  "diffs": "1 file changed, 2 insertions(+), 1 deletion(-)"
-},
-
-{
-  "commit": "705cc6be466b0e6f60b69ecac61832a925a530b0",
-  "subject": "Enhance archiveBranchToPages workflow with checks",
-  "body": "Add checks for JSON reference and existing directory in workflow",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:28:11 +1100",
-  "diffs": "1 file changed, 6 insertions(+)"
-},
-
-{
-  "commit": "bfcfb2884dd11c21cc899031f0c6c8ac28340540",
-  "subject": "Fix git fetch command and add directory creation check",
-  "body": "Fixed syntax for git fetch command and added directory check.",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:22:55 +1100",
-  "diffs": "1 file changed, 6 insertions(+), 1 deletion(-)"
-},
-
-{
-  "commit": "a2575902dd10e5dd9be08b47d77d763db3fee9dc",
-  "subject": "Fetch and switch to gh-pages branch in workflow",
-  "body": "Added steps to fetch and switch to the gh-pages branch.",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:18:30 +1100",
-  "diffs": "1 file changed, 5 insertions(+)"
-},
-
-{
-  "commit": "5cdd9d90383600b298125b455759c35b04abf05c",
-  "subject": "Add checkout step in archiveBranchToPages.yml",
-  "body": "Added checkout step to archive branch workflow.",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:15:23 +1100",
-  "diffs": "1 file changed, 4 insertions(+)"
-},
-
-{
-  "commit": "b62b4988453cd72398e50da4e68997357db6dbec",
-  "subject": "Add GitHub Actions workflow to archive branch",
-  "body": "in test mode, just to trigger manually",
-  "name": "Patrick McMahon",
-  "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:10:24 +1100",
-  "diffs": "1 file changed, 11 insertions(+)"
-},
-
-{
-  "commit": "dbe9b3ad79016fae3aae9570de806adfa666aca3",
-  "subject": "add index.html file",
+  "commit": "780f213c3ede257005498600b7f4c27c40a2d4cc",
+  "subject": "Update archiveBranchToPages.yml",
   "body": "",
   "name": "Patrick McMahon",
   "date": "2026-11-19",
-  "dateTime": "Thu, 19 Nov 2026 14:02:15 +1100",
-  "diffs": "2 files changed, 23 insertions(+)"
+  "dateTime": "Thu, 19 Nov 2026 15:04:07 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
+  "commit": "107ef1a9d8e9c5b5aa62688ab179238a26d64947",
+  "subject": "Add echo command for changes made in workflow",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 15:05:41 +1100",
+  "diffs": "1 file changed, 2 insertions(+)"
+},
+
+{
+  "commit": "ab545f1c43a0871442db80981294764b87af9945",
+  "subject": "Fix environment variable assignment in workflow",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 15:08:56 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 2 deletions(-)"
+},
+
+{
+  "commit": "963384012120073b185f75e770c9169c6419b99b",
+  "subject": "Fix environment variable assignment for changes detection",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 15:11:43 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
+  "commit": "aa578e1a393be5387ba7c4d4fa3451e95702a304",
+  "subject": "Fix git diff check and comment out git add",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 15:13:15 +1100",
+  "diffs": "1 file changed, 2 insertions(+), 2 deletions(-)"
+},
+
+{
+  "commit": "769ccf81b6f341c7c1113f4033eab42e25e3e11b",
+  "subject": "Fix git diff check and update add command",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 15:16:58 +1100",
+  "diffs": "1 file changed, 3 insertions(+), 3 deletions(-)"
+},
+
+{
+  "commit": "df46ed764689a33b6a1e776615378bf7c06857e9",
+  "subject": "Update archiveBranchToPages.yml",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 15:23:37 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
+  "commit": "a59b993227b90c0249a244c9c2cd3fc28ba5f759",
+  "subject": "Update archiveBranchToPages.yml",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 15:27:48 +1100",
+  "diffs": "1 file changed, 2 insertions(+)"
+},
+
+{
+  "commit": "1d8c9c1be42195c063f7e66c020893514ae6b457",
+  "subject": "Update archiveBranchToPages.yml",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 15:29:31 +1100",
+  "diffs": "1 file changed, 5 insertions(+), 4 deletions(-)"
+},
+
+{
+  "commit": "91a8940fb2b7ebbe1d46ee94766e69da313b2644",
+  "subject": "Fix command to log branch history to JSON file",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 15:31:31 +1100",
+  "diffs": "1 file changed, 2 insertions(+), 2 deletions(-)"
+},
+
+{
+  "commit": "51363c32eb97060e9d839e3c53373b37bcf6eb68",
+  "subject": "Update git log command in workflow YAML file",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 15:33:22 +1100",
+  "diffs": "1 file changed, 3 insertions(+), 2 deletions(-)"
+},
+
+{
+  "commit": "1a1f6a79eed1d3395f0ef789de01a0bb2febec41",
+  "subject": "Modify git log format in workflow for commit history",
+  "body": "Updated git log command to include author and message details in JSON format.",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 15:35:56 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
+  "commit": "d84698cbf77c278bd1b7b6fe2632499833fb71b1",
+  "subject": "Update archiveBranchToPages.yml",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 15:37:14 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
+  "commit": "fc3ae68bed273f440f73643ab6465ecb0a59a687",
+  "subject": "Update git log command in workflow file",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 15:39:02 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 2 deletions(-)"
+},
+
+{
+  "commit": "f4a51e0bbdf9441ac13e80f4451010e1a0db6423",
+  "subject": "Fix formatting in git log command in workflow",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 15:41:46 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
+  "commit": "fdd338f399baa58f3e074aabdba5d6b69b3f6ef9",
+  "subject": "Update archiveBranchToPages.yml",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 15:55:34 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
+  "commit": "e17e93fed89dae8be663c671a01d3250ab5a17f7",
+  "subject": "Update archiveBranchToPages.yml",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 16:00:50 +1100",
+  "diffs": "1 file changed, 2 insertions(+)"
+},
+
+{
+  "commit": "4d6c71733f86cc402828f6a50980afb07b62d1f4",
+  "subject": "Refactor GitHub Actions workflow for branch archiving",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-19",
+  "dateTime": "Thu, 19 Nov 2026 16:04:57 +1100",
+  "diffs": "1 file changed, 8 insertions(+), 6 deletions(-)"
+},
+
+{
+  "commit": "65d28880163bb5bd678d9ee8277949ed07b7c343",
+  "subject": "clean up main",
+  "body": "got rid of index and added gitignore",
+  "name": "Patrick McMahon",
+  "date": "2026-11-23",
+  "dateTime": "Mon, 23 Nov 2026 08:35:52 +1100",
+  "diffs": "5 files changed, 27 insertions(+), 13 deletions(-)"
+},
+
+{
+  "commit": "77c9b02b2dbe583462b3a7b33b29bddf34431e78",
+  "subject": "Delete style.css",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-23",
+  "dateTime": "Mon, 23 Nov 2026 08:41:13 +1100",
+  "diffs": "1 file changed, 1 deletion(-)"
+},
+
+{
+  "commit": "536806137ebafcc36a9fcc087482863fe2beacda",
+  "subject": "Delete .idea directory from remote",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-23",
+  "dateTime": "Mon, 23 Nov 2026 08:41:43 +1100",
+  "diffs": "4 files changed, 32 deletions(-)"
+},
+
+{
+  "commit": "e907ae9ac606f9a38cc67993ee3d7428a9fdad55",
+  "subject": "append name of commit logs onto file",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-23",
+  "dateTime": "Mon, 23 Nov 2026 08:43:59 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
+  "commit": "9733c6e3ed4d0b0109eba7225accecf2346d84d8",
+  "subject": "Remove existing files before archiving branch",
+  "body": "Add step to remove existing files from branch before archiving.",
+  "name": "Patrick McMahon",
+  "date": "2026-11-23",
+  "dateTime": "Mon, 23 Nov 2026 08:51:57 +1100",
+  "diffs": "1 file changed, 2 insertions(+)"
+},
+
+{
+  "commit": "2ed3f7e222df4f26380c92fb0f3a524f28fa456b",
+  "subject": "changed folder check",
+  "body": "Modify the workflow to remove existing branch directory before archiving files. also added creation of folder by default to account for this",
+  "name": "Patrick McMahon",
+  "date": "2026-11-23",
+  "dateTime": "Mon, 23 Nov 2026 08:58:07 +1100",
+  "diffs": "1 file changed, 5 insertions(+), 5 deletions(-)"
+},
+
+{
+  "commit": "72ed3d727c331596ee40b5eeab6f5d47cb26dd41",
+  "subject": "Update archiveBranchToPages.yml",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-23",
+  "dateTime": "Mon, 23 Nov 2026 09:13:24 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
+  "commit": "02632d871106ca471b70cc2e4efbb6255f23ff3a",
+  "subject": "Remove .gitignore from archive branch workflow",
+  "body": "Remove .gitignore file from the archive branch.",
+  "name": "Patrick McMahon",
+  "date": "2026-11-23",
+  "dateTime": "Mon, 23 Nov 2026 09:14:44 +1100",
+  "diffs": "1 file changed, 2 insertions(+)"
+},
+
+{
+  "commit": "a8b655419254049632c25941ca2467af99d95d89",
+  "subject": "added short date",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-23",
+  "dateTime": "Mon, 23 Nov 2026 10:21:04 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
+  "commit": "7322f26b6130c50e3993ebb6fa76112603e6913d",
+  "subject": "Modify git log format in workflow for JSON output",
+  "body": "Updated git log command to include short date format in JSON output.",
+  "name": "Patrick McMahon",
+  "date": "2026-11-23",
+  "dateTime": "Mon, 23 Nov 2026 12:48:30 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
+  "commit": "6b3e2b2feddbdbbb3ab3039256ea61ed8cda9b1f",
+  "subject": "Update archiveBranchToPages.yml",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-23",
+  "dateTime": "Mon, 23 Nov 2026 12:50:34 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
+  "commit": "c809755a7b2bab467833f56392b66029158b24d7",
+  "subject": "Update archiveBranchToPages.yml",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-23",
+  "dateTime": "Mon, 23 Nov 2026 12:57:06 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
 }
 ]
