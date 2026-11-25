@@ -497,5 +497,45 @@
   "date": "2026-11-23",
   "dateTime": "Mon, 23 Nov 2026 12:57:06 +1100",
   "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
+  "commit": "23c360fc076539ce9b8264275e9e2310eefbe53c",
+  "subject": "Enhance commit history generation and page creation",
+  "body": "Updated the script to generate a commit history JSON file and check for the existence of a commit history page, creating it if it doesn't exist.",
+  "name": "Patrick McMahon",
+  "date": "2026-11-25",
+  "dateTime": "Wed, 25 Nov 2026 12:10:31 +1100",
+  "diffs": "1 file changed, 6 insertions(+), 1 deletion(-)"
+},
+
+{
+  "commit": "0fbb78fab23eba9329e7f218d06c8319f085ac38",
+  "subject": "Update archiveBranchToPages.yml",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-25",
+  "dateTime": "Wed, 25 Nov 2026 12:13:42 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
+  "commit": "748857b8e5cbc0e51dfb34ec218f924006c51e9f",
+  "subject": "Fix sed command for commit history page creation",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-25",
+  "dateTime": "Wed, 25 Nov 2026 12:15:16 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
+  "commit": "8247c2289fde6e09ffa3c830d23bba5739021deb",
+  "subject": "Update commit history page generation in workflow",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-25",
+  "dateTime": "Wed, 25 Nov 2026 12:18:58 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
 }
 ]
