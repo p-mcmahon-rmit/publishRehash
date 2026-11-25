@@ -48,10 +48,10 @@ function addCommitToTimelines(commit){
 }
 
 function createOverviewEntry(date){
-    // should this be an a linked to #
-    const newDateWrapper = document.createElement("button");
-    newDateWrapper.classList.add("dateWrapper");
+    const newDateWrapper = document.createElement("a");
+    newDateWrapper.classList.add("timelineDateWrapper");
     newDateWrapper.dataset.date = date;
+    newDateWrapper.href = `#${date}`;
     const newDateLabel = document.createElement("label");
     newDateLabel.classList.add("dateLabel");
     newDateLabel.textContent = date;
@@ -66,14 +66,20 @@ function createOverviewEntry(date){
 }
 
 function createDetailedEntry(commit, createNewSection){
-    console.log(createNewSection);
     if(createNewSection === true){
         const newDateSection = document.createElement("div");
         newDateSection.classList.add("dateSection");
+        newDateSection.id = commit.date;
         const newDateSectionHeading = document.createElement("h3");
         newDateSectionHeading.classList.add("dateSectionHeading");
         newDateSectionHeading.textContent = commit.date;
         newDateSection.appendChild(newDateSectionHeading);
+        const toggleButton = document.createElement("button");
+        toggleButton.textContent = "Toggle Section Details";
+        toggleButton.dataset.isOpen = "false";
+        toggleButton.classList.add("toggleButton");
+        toggleButton.addEventListener("click", toggleSection);
+        newDateSection.appendChild(toggleButton);
         detailsWrapper.appendChild(newDateSection);
         lastDetailedDateAdded = newDateSection;
     }
@@ -82,6 +88,41 @@ function createDetailedEntry(commit, createNewSection){
     const newCommitDetailsSummary = document.createElement("summary");
     newCommitDetailsSummary.classList.add("commitDetailsSummary");
     newCommitDetailsSummary.textContent = `${commit.dateTime.split(" ")[4]} ${commit.subject}`;
-    newCommitDetails.appendChild(newCommitDetailsSummary)
+    newCommitDetails.appendChild(newCommitDetailsSummary);
+    const newCommitDetailsInteriorWrapper = document.createElement("div");
+    newCommitDetailsInteriorWrapper.classList.add("commitDetailsInteriorWrapper")
+    const newCommitDetailsHash = createDetailedLine("Hash", commit.commit);
+    newCommitDetailsInteriorWrapper.appendChild(newCommitDetailsHash);
+    const newCommitDetailsNameTime = createDetailedLine("Details", commit.name + " " + commit.dateTime);
+    newCommitDetailsInteriorWrapper.appendChild(newCommitDetailsNameTime);
+    const newCommitDetailsBody = createDetailedLine("Body", commit.body);
+    newCommitDetailsInteriorWrapper.appendChild(newCommitDetailsBody);
+    const newCommitDetailsDiffs = createDetailedLine("Diffs", commit.diffs);
+    newCommitDetailsInteriorWrapper.appendChild(newCommitDetailsDiffs);
+    newCommitDetails.appendChild(newCommitDetailsInteriorWrapper);
     lastDetailedDateAdded.appendChild(newCommitDetails);
+}
+
+function createDetailedLine(topic, info){
+    const newLinePara = document.createElement("p");
+    const newLineTopic = document.createElement("span");
+    newLineTopic.textContent = topic + ": ";
+    newLineTopic.classList.add("topicSpan");
+    const newLineInfo = document.createElement("span");
+    newLineInfo.textContent = info;
+    newLinePara.appendChild(newLineTopic);
+    newLinePara.appendChild(newLineInfo);
+    return newLinePara;
+}
+
+function toggleSection(e) {
+    const sectionDetails = Array.from(e.target.parentElement.getElementsByTagName("details"));
+    if (e.target.dataset.isOpen === "false"){
+        sectionDetails.forEach(details => details.open = true);
+        e.target.dataset.isOpen = "true";
+    } else {
+        sectionDetails.forEach(details => details.open = false);
+        e.target.dataset.isOpen = "false";
+    }
+
 }
