@@ -15,10 +15,14 @@ async function loadLinkData(){
 
 function createLinks(branchNames){
     branchNames.forEach((name) => {
-        const newLink = document.createElement("a");
-        newLink.textContent = name;
-        newLink.href = `/${name}`;
-        branchLinksWrapper.appendChild(newLink);
+        const newBranchLink = document.createElement("a");
+        newBranchLink.textContent = name;
+        newBranchLink.href = `/${name}`;
+        branchLinksWrapper.appendChild(newBranchLink);
+        const newHistoryLink = document.createElement("a");
+        newHistoryLink.textContent = `${name} commit history`;
+        newHistoryLink.href = `${name}-commit-history-page.html`;
+        branchLinksWrapper.appendChild(newHistoryLink);
     });
 }
 
