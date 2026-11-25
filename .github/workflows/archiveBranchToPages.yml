@@ -47,7 +47,7 @@ jobs:
     # check to see if page for branch commit history exists, create if not
     - run: |
             if [ ! -f ${{github.ref_name}}-commit-history-page.html ]; then
-              sed 's/Document/${{github.ref_name}}-commit-history/;s/template/${{github.ref_name}}/' template-commit-history-page.html
+              sed 's/Document/${{github.ref_name}} commit history/;s/template/${{github.ref_name}}/' template-commit-history-page.html > ${{github.ref_name}}-commit-history-page.html
             fi;
     # stage any files to commit later
     - run: git add .
