@@ -517,5 +517,15 @@
   "date": "2026-11-25",
   "dateTime": "Wed, 25 Nov 2026 12:13:42 +1100",
   "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
+},
+
+{
+  "commit": "748857b8e5cbc0e51dfb34ec218f924006c51e9f",
+  "subject": "Fix sed command for commit history page creation",
+  "body": "",
+  "name": "Patrick McMahon",
+  "date": "2026-11-25",
+  "dateTime": "Wed, 25 Nov 2026 12:15:16 +1100",
+  "diffs": "1 file changed, 1 insertion(+), 1 deletion(-)"
 }
 ]
